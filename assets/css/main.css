@@ -3,3 +3,26 @@ body {
     overflow: hidden;
     font-family: Monospace;
 }
+
+#feedback {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 200px;
+    text-align: center;
+    background: #ffffff7a;
+    padding: 5px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bolder;
+    border: solid #35353550;
+}
+
+#feedback>small {
+    font-style: italic;
+}
+
+hr {
+    margin: 2px 0;
+    color: #ccc;
+}

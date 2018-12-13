@@ -1,4 +1,4 @@
-var mixer, actions, activeAction, previousAction, previousStage;
+var mixer, actions, activeAction, previousAction;
 var scene, camera, renderer, clock;
 var arToolkitSource, arToolkitContext;
 
@@ -86,17 +86,15 @@ function initialize() {
         }).addEventListener('markerFound', function (event) {
             var a = element.charAt(0).toUpperCase() + element.slice(1);
             if (i < 3) {
-                if (previousStage != a) {
+                if (activeAction._clip.name != a)
                     fadeToAction(a, 0.5);
-                    previousStage = a;
-                }
             }
             else {
                 if (activeAction._clip.name == "Idle" || activeAction._clip.name == "Running" || activeAction._clip.name == "Dance") {
                     fadeToAction(a, 0.2);
                     mixer.addEventListener('finished', function () {
                         mixer.removeEventListener('finished', this);
-                        fadeToAction(previousStage, 0.2);
+                        fadeToAction("Idle", 0.2);
                     });
                 }
             }
@@ -138,7 +136,6 @@ function initialize() {
         }
 
         //Play Default Animation
-        previousStage = 'Idle';
         previousAction = actions['Idle'];
         activeAction = actions['Idle'];
         activeAction.play();
