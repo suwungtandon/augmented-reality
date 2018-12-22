@@ -179,3 +179,10 @@ function animate() {
     update();
     render();
 }
+
+document.getElementsByClassName("exit").addEventListener("click", function () {
+
+});
+function closeDialog() {
+    document.getElementById("dialog").outerHTML = "";
+}

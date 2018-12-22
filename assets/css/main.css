@@ -4,7 +4,7 @@ body {
     font-family: Monospace;
 }
 
-#feedback {
+#dialog {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -13,9 +13,55 @@ body {
     background: #ffffff7a;
     padding: 5px;
     color: #333;
-    text-decoration: none;
     font-weight: bolder;
     border: solid #35353550;
+}
+
+#dialog a {
+    text-decoration: none;
+    color: #111;
+}
+
+#dialog .exit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: 800;
+    padding: 0px 4px 0px 6px;
+    color: white;
+    background: #35353550;
+    line-height: 20px;
+    cursor: pointer;
+    border-bottom-left-radius: 50%;
+}
+
+#dialog ul {
+    list-style: none;
+    padding: 0;
+    height: 30px;
+}
+
+#dialog ul li {
+    float: left;
+    margin-right: 3px;
+}
+
+#dialog ul li img {
+    width: 30px;
+}
+
+#dialog #browser {
+    width: 60%;
+    text-align: center;
+    font-size: small;
+    margin: 0 auto 10px auto;
+}
+
+#dialog #browser img {
+    float: left;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
 }
 
 #feedback>small {
